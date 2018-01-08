@@ -61,7 +61,7 @@ A future version may add options to enforce types or coerce data.
 
 =head1 SEE ALSO
 
-L<Types::SQL::Util>
+L<Types::SQL>
 
 L<Types::Standard>
 
