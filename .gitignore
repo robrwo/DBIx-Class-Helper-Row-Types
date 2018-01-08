@@ -1,0 +1,4 @@
+DBIx-Class-*/
+DBIx-Class-*.tar.gz
+.build/
+cpanfile.snapshot
