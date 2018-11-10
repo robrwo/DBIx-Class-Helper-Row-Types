@@ -9,6 +9,18 @@ use Hash::Merge qw/ merge /;
 use Scalar::Util qw/ blessed /;
 use Types::SQL::Util qw/ column_info_from_type /;
 
+our $VERSION = 'v0.1.0';
+
+=for Pod::Coverage VERSION
+
+=cut
+
+sub VERSION { # for older Perls
+    my ( $class, $wanted ) = @_;
+    require version;
+    return version->parse($VERSION);
+}
+
 sub add_columns {
     my ( $self, @args ) = @_;
 
