@@ -21,30 +21,6 @@ sub VERSION { # for older Perls
     return version->parse($VERSION);
 }
 
-sub add_columns {
-    my ( $self, @args ) = @_;
-
-    my @cols = map { $self->_apply_types_to_column_defition($_) } @args;
-
-    $self->next::method(@cols);
-}
-
-sub _apply_types_to_column_defition {
-    my ( $self, $column_info ) = @_;
-
-    return $column_info unless ref $column_info;
-
-    my $type = $column_info->{isa} or return $column_info;
-
-    my %info = column_info_from_type($type);
-
-    return merge( $column_info, \%info );
-}
-
-1;
-
-=pod
-
 =head1 SYNOPSIS
 
 In result class:
@@ -70,6 +46,41 @@ just allows you to use types as a shorthand for specifying the column
 info.
 
 A future version may add options to enforce types or coerce data.
+
+=cut
+
+=method C<add_column>
+
+=method C<add_columns>
+
+This allows you to specify the volumn info using the C<isa> attribute
+and a L<Type::Tiny> type.
+
+Note that in no way does this enforce that type.
+
+=cut
+
+sub add_columns {
+    my ( $self, @args ) = @_;
+
+    my @cols = map { $self->_apply_types_to_column_defition($_) } @args;
+
+    $self->next::method(@cols);
+}
+
+sub _apply_types_to_column_defition {
+    my ( $self, $column_info ) = @_;
+
+    return $column_info unless ref $column_info;
+
+    my $type = $column_info->{isa} or return $column_info;
+
+    my %info = column_info_from_type($type);
+
+    return merge( $column_info, \%info );
+}
+
+1;
 
 =head1 SEE ALSO
 
