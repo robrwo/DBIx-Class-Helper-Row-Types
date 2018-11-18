@@ -90,6 +90,10 @@ sub _apply_types_to_column_defition {
 
     @info{ keys %$column_info } = values %$column_info;
 
+    $info{extra} ||= {};
+    $info{extra}{type} = {};
+    $info{extra}{type}{$_} = delete $info{$_} for qw/ isa strict coerce /;
+
     return \%info;
 }
 
@@ -111,13 +115,16 @@ sub set_column {
 
     if (my $info = $self->result_source->column_info($column)) {
 
-        if ((my $type = $info->{isa}) && $info->{strict}) {
+        if (my $type_info = $info->{extra}{type}) {
 
-            if ($info->{coerce} && $type->$_can('coerce')) {
+            my $type = $type_info->{isa};
+
+            if ($type_info->{coerce} && $type->$_can('coerce')) {
                 $new_value = $type->coerce($new_value);
             }
 
-            $type->$_call_if_can( assert_valid => $new_value );
+            $type->$_call_if_can( assert_valid => $new_value )
+                if $type_info->{strict};
         }
 
     }

@@ -19,25 +19,57 @@ cmp_deeply $rs->result_source->column_info('id'),
     data_type         => 'serial',
     is_auto_increment => 1,
     is_numeric        => 1,
-    isa               => isa('Type::Tiny'),
+    extra             => {
+        type => {
+            isa    => isa('Type::Tiny'),
+            strict => bool(0),
+            coerce => bool(0),
+        }
+    },
   },
   'id';
 
 cmp_deeply $rs->result_source->column_info('name'),
   {
-    data_type         => 'text',
-    isa               => isa('Type::Tiny'),
-    strict            => 1,
-    size              => 255,
-    is_numeric        => 0,
+    data_type => 'text',
+    extra     => {
+        type => {
+            isa    => isa('Type::Tiny'),
+            strict => 1,
+            coerce => bool(0),
+        }
+    },
+    size       => 255,
+    is_numeric => 0,
   },
   'name';
+
+cmp_deeply $rs->result_source->column_info('model'),
+  {
+    data_type   => 'text',
+    is_nullable => 1,
+    extra       => {
+        type => {
+            isa    => isa('Type::Tiny'),
+            strict => 1,
+            coerce => 1,
+        }
+    },
+    is_numeric => 0,
+  },
+  'model';
 
 cmp_deeply $rs->result_source->column_info('serial_number'), {
     data_type  => 'varchar',
     size       => 32,
-    is_numeric => 1,                   # overridden
-    isa        => isa('Type::Tiny'),
+    is_numeric => 1,           # overridden
+    extra      => {
+        type => {
+            isa    => isa('Type::Tiny'),
+            strict => bool(0),
+            coerce => bool(0),
+        }
+    },
   },
   'serial_number';
 

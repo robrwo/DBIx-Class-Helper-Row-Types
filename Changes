@@ -4,6 +4,10 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Add strict and coerce options to enforce/coerce on set_column.
 
+  [Incompatabilies]
+  - Moved the isa attribute key into the extra.type key, so as to avoid
+    conflicts.
+
 v0.1.2    2018-11-18 16:36:27+00:00 Europe/London
   [Enhancements]
   - Removed reliance on Hash::Merge.
