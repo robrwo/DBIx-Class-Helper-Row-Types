@@ -3,15 +3,16 @@
 use strict;
 use warnings;
 
+use Test::Most;
+
 use lib 't/lib';
-use Test::More;
-use Test::Deep;
 
-use TestSchema;
-my $schema = TestSchema->deploy_or_connect();
-$schema->prepopulate;
+use Test::Schema;
 
-my $rs = $schema->resultset('Typed');
+my $dsn    = "dbi:SQLite::memory:";
+my $schema = Test::Schema->deploy_or_connect($dsn);
+
+ok my $rs = $schema->resultset('A'), 'resultset';
 
 cmp_deeply $rs->result_source->column_info('id'),
   {
