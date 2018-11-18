@@ -108,6 +108,10 @@ applied before checking the constraint.
 Note that type constraints will not be enforced if you use the
 C<insert> or resultset C<create> methods.
 
+This is entirely separate from database-level constraints.
+
+Enabling C<strict> for an inflated column is strongly discouraged.
+
 =cut
 
 sub set_column {
