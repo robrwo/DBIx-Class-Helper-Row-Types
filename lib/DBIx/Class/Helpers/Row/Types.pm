@@ -16,7 +16,6 @@ our $VERSION = 'v0.1.0';
 =cut
 
 sub VERSION { # for older Perls
-    my ( $class, $wanted ) = @_;
     require version;
     return version->parse($VERSION);
 }
