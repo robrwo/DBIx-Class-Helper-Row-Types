@@ -8,7 +8,10 @@ use warnings;
 use Hash::Merge qw/ merge /;
 use Ref::Util qw/ is_ref /;
 use Safe::Isa qw/ $_isa /;
-use Types::SQL::Util qw/ column_info_from_type /;
+use Types::SQL::Util v0.3.0 qw/ column_info_from_type /;
+
+# RECOMMEND PREREQ: Ref::Util::XS
+# RECOMMEND PREREQ: Type::Tiny::XS
 
 our $VERSION = 'v0.1.0';
 
