@@ -17,7 +17,7 @@ use namespace::autoclean;
 # RECOMMEND PREREQ: Ref::Util::XS
 # RECOMMEND PREREQ: Type::Tiny::XS
 
-our $VERSION = 'v0.1.0';
+our $VERSION = 'v0.1.1';
 
 =for Pod::Coverage VERSION
 
