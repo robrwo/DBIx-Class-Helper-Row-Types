@@ -30,6 +30,9 @@ In result class:
  __PACKAGE__->load_components('Helper::Row::Types');
 
  __PACKAGE__->add_column(
+
+    id   => Serial,
+
     name => {
       isa => Maybe[ Varchar[64] ],
     },
@@ -42,9 +45,10 @@ L<Type::Tiny> object.
 
 Note that this I<does not> enforce that the data is of that type. It
 just allows you to use types as a shorthand for specifying the column
-info.
+type.
 
-A future version may add options to enforce types or coerce data.
+You can use types from L<Types::SQL> or supported types from
+L<Types::Standard>.
 
 =cut
 
@@ -88,6 +92,7 @@ sub _apply_types_to_column_defition {
 
 L<Types::SQL>
 
-L<Types::Standard>
+L<Types::SQL::Util> provides a list of "standard" types that are
+supported.
 
 =cut
