@@ -51,14 +51,18 @@ Note that in no way does this enforce that type.
 
 ## `set_column`
 
-If the `strict` attribute is specified for the column, then the type
+If the `strict` attribute is true for the column, then the type
 constraint will be enforced when the column is explicitly set.
 
-If the `coerce` attribute is also specified, then a coercion will be
+If the `coerce` attribute is true, then the type's coercion will be
 applied before checking the constraint.
 
 Note that type constraints will not be enforced if you use the
 `insert` or resultset `create` methods.
+
+This is entirely separate from database-level constraints.
+
+Enabling `strict` for an inflated column is strongly discouraged.
 
 # KNOWN ISSUES
 
