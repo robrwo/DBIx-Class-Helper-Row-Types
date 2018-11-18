@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Add strict and coerce options to enforce/coerce on set_column.
 
 v0.1.2    2018-11-18 16:36:27+00:00 Europe/London
   [Enhancements]

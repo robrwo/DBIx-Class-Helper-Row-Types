@@ -1,6 +1,6 @@
 requires "DBIx::Class::Core" => "0";
 requires "Ref::Util" => "0";
-requires "Safe::Isa" => "0";
+requires "Safe::Isa" => "1.000008";
 requires "Types::SQL::Util" => "v0.3.0";
 requires "perl" => "v5.8.0";
 requires "version" => "0";
@@ -16,7 +16,9 @@ on 'test' => sub {
   requires "SQL::Translator" => "0.11018";
   requires "Test::More" => "0";
   requires "Test::Most" => "0";
+  requires "Types::Common::String" => "0";
   requires "Types::SQL" => "v0.3.0";
+  requires "Types::Standard" => "0";
 };
 
 on 'test' => sub {

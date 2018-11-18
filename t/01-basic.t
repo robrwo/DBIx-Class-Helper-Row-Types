@@ -23,6 +23,16 @@ cmp_deeply $rs->result_source->column_info('id'),
   },
   'id';
 
+cmp_deeply $rs->result_source->column_info('name'),
+  {
+    data_type         => 'text',
+    isa               => isa('Type::Tiny'),
+    strict            => 1,
+    size              => 255,
+    is_numeric        => 0,
+  },
+  'name';
+
 cmp_deeply $rs->result_source->column_info('serial_number'), {
     data_type  => 'varchar',
     size       => 32,
@@ -30,5 +40,41 @@ cmp_deeply $rs->result_source->column_info('serial_number'), {
     isa        => isa('Type::Tiny'),
   },
   'serial_number';
+
+ok my $row = $rs->create( { id => 1, name => 'test', serial_number => '1234' } ), 'created row';
+
+lives_ok {
+    $row->name('changed');
+} 'changed name';
+
+throws_ok {
+    $row->name('Changed Again');
+} qr/Must not contain u?pper case letters/;
+
+ TODO: {
+
+     local $TODO = "create does not use set_column";
+
+     dies_ok {
+         $rs->create( { id => 2, name => 'Another', serial_number => '321' } )
+     } 'create row with invalid name';
+
+     throws_ok {
+         my $obj = $rs->new( { id => 3, name => 'Another', serial_number => '321' } );
+         $obj->insert;
+     } qr/Must not contain u?pper case letters/, 'insert a row with an invalid name';
+
+}
+
+throws_ok {
+    $row->update( { name => 'Uppercase Name' } );
+} qr/Must not contain u?pper case letters/,
+    'update a row with an invalid name';
+
+lives_ok {
+    $row->model('model');
+} 'set model';
+
+is $row->model, 'MODEL', 'model was coerced';
 
 done_testing;
