@@ -7,11 +7,9 @@ use v5.8;
 use strict;
 use warnings;
 
-use Ref::Util qw/ is_ref /;
+use Ref::Util ();
 use Safe::Isa qw/ $_isa /;
-use Types::SQL::Util v0.3.0 qw/ column_info_from_type /;
-
-use namespace::autoclean;
+use Types::SQL::Util v0.3.0 ();
 
 # RECOMMEND PREREQ: Ref::Util::XS
 # RECOMMEND PREREQ: Type::Tiny::XS
@@ -80,14 +78,14 @@ sub add_columns {
 sub _apply_types_to_column_defition {
     my ( $self, $column_info ) = @_;
 
-    return $column_info unless is_ref $column_info;
+    return $column_info unless Ref::Util::is_ref $column_info;
 
     $column_info = { isa => $column_info }
       if $column_info->$_isa('Type::Tiny');
 
     my $type = $column_info->{isa} or return $column_info;
 
-    my %info = column_info_from_type($type);
+    my %info = Types::SQL::Util::column_info_from_type($type);
 
     @info{ keys %$column_info } = values %$column_info;
 
