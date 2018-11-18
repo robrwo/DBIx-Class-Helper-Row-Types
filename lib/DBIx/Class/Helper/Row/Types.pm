@@ -7,6 +7,7 @@ use warnings;
 
 use Hash::Merge qw/ merge /;
 use Ref::Util qw/ is_ref /;
+use Safe::Isa qw/ $_isa /;
 use Types::SQL::Util qw/ column_info_from_type /;
 
 our $VERSION = 'v0.1.0';
@@ -70,6 +71,9 @@ sub _apply_types_to_column_defition {
     my ( $self, $column_info ) = @_;
 
     return $column_info unless is_ref $column_info;
+
+    $column_info = { isa => $column_info }
+      if $column_info->$_isa('Type::Tiny');
 
     my $type = $column_info->{isa} or return $column_info;
 
