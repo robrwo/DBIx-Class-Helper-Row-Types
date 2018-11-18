@@ -91,6 +91,11 @@ sub _apply_types_to_column_defition {
 
 1;
 
+=head1 ROADMAP
+
+Support for Perl versions earlier than 5.10 will be removed sometime
+in 2019.
+
 =head1 SEE ALSO
 
 L<Types::SQL>
