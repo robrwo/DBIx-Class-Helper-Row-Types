@@ -7,7 +7,6 @@ use v5.8;
 use strict;
 use warnings;
 
-use Hash::Merge qw/ merge /;
 use Ref::Util qw/ is_ref /;
 use Safe::Isa qw/ $_isa /;
 use Types::SQL::Util v0.3.0 qw/ column_info_from_type /;
@@ -90,7 +89,9 @@ sub _apply_types_to_column_defition {
 
     my %info = column_info_from_type($type);
 
-    return merge( $column_info, \%info );
+    @info{ keys %$column_info } = values %$column_info;
+
+    return \%info;
 }
 
 1;

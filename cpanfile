@@ -1,4 +1,3 @@
-requires "Hash::Merge" => "0";
 requires "Ref::Util" => "0";
 requires "Safe::Isa" => "0";
 requires "Types::SQL::Util" => "v0.3.0";
