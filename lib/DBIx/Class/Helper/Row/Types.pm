@@ -102,7 +102,7 @@ sub _apply_types_to_column_defition {
 If the C<strict> attribute is specified for the column, then the type
 constraint will be enforced when the column is explicitly set.
 
-If the C<coerce> attribute is also specified, then a coercion will be
+If the C<coerce> attribute is specified, then a coercion will be
 applied before checking the constraint.
 
 Note that type constraints will not be enforced if you use the
