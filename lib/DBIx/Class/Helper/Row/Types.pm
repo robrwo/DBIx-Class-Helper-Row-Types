@@ -12,6 +12,8 @@ use Ref::Util qw/ is_ref /;
 use Safe::Isa qw/ $_isa /;
 use Types::SQL::Util v0.3.0 qw/ column_info_from_type /;
 
+use namespace::autoclean;
+
 # RECOMMEND PREREQ: Ref::Util::XS
 # RECOMMEND PREREQ: Type::Tiny::XS
 
