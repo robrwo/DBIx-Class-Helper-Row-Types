@@ -1,5 +1,7 @@
 package DBIx::Class::Helper::Row::Types;
 
+use v5.8;
+
 # ABSTRACT: Use Types to define rows
 
 use strict;

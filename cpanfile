@@ -2,6 +2,7 @@ requires "Hash::Merge" => "0";
 requires "Ref::Util" => "0";
 requires "Safe::Isa" => "0";
 requires "Types::SQL::Util" => "v0.3.0";
+requires "perl" => "v5.8.0";
 requires "version" => "0";
 recommends "Ref::Util::XS" => "0";
 recommends "Type::Tiny::XS" => "0";
