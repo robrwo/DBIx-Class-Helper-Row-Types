@@ -1,0 +1,8 @@
+Revision history for {{ $dist->name }}:
+
+{{$NEXT}}
+- Initial release on CPAN,
+
+Note that an earlier version was submitted as a pull request to
+DBIx-Class-Helpers.  It was not accepted due to the addition of
+prerequisites for Types::SQL (and implicity Type::Tiny).
