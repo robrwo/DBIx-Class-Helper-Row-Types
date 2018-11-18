@@ -25,7 +25,6 @@ sub VERSION { # for older Perls
 In result class:
 
   use Types::SQL -types;
-  use Types::Standard -types;
 
  __PACKAGE__->load_components('Helper::Row::Types');
 
