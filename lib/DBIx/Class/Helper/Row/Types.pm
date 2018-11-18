@@ -98,6 +98,8 @@ in 2019.
 
 =head1 SEE ALSO
 
+L<DBIx::Class>
+
 L<Types::SQL>
 
 L<Types::SQL::Util> provides a list of "standard" types that are
