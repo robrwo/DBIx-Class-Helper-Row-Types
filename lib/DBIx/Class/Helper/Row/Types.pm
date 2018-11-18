@@ -6,6 +6,7 @@ use strict;
 use warnings;
 
 use Hash::Merge qw/ merge /;
+use Ref::Util qw/ is_ref /;
 use Types::SQL::Util qw/ column_info_from_type /;
 
 our $VERSION = 'v0.1.0';
@@ -68,7 +69,7 @@ sub add_columns {
 sub _apply_types_to_column_defition {
     my ( $self, $column_info ) = @_;
 
-    return $column_info unless ref $column_info;
+    return $column_info unless is_ref $column_info;
 
     my $type = $column_info->{isa} or return $column_info;
 
