@@ -6,7 +6,6 @@ use strict;
 use warnings;
 
 use Hash::Merge qw/ merge /;
-use Scalar::Util qw/ blessed /;
 use Types::SQL::Util qw/ column_info_from_type /;
 
 our $VERSION = 'v0.1.0';
