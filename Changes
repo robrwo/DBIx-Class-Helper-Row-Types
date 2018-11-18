@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Tests]
+  - Added diagnostics for cpantesters.
 
 v0.1.0    2018-11-18 01:35:56+00:00 Europe/London
 - Initial release on CPAN,
