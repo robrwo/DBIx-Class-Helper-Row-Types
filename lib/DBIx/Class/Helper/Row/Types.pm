@@ -59,8 +59,8 @@ L<Types::Standard>.
 
 =method C<add_columns>
 
-This allows you to specify the volumn info using the C<isa> attribute
-and a L<Type::Tiny> type.
+These methods are modified to allow you to specify the column info
+using the C<isa> attribute and a L<Type::Tiny> type.
 
 Note that in no way does this enforce that type.
 
