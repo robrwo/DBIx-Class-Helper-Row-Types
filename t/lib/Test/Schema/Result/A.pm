@@ -2,7 +2,7 @@ package Test::Schema::Result::A;
 
 use base qw/DBIx::Class::Core/;
 
-use Types::SQL -types;
+use Types::SQL v0.3.0 -types;
 
 __PACKAGE__->load_components(qw/ Helper::Row::Types /);
 
