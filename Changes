@@ -9,6 +9,9 @@ Revision history for {{ $dist->name }}:
   [Incompatabilies]
   - Remove support for Perls older than v5.10.
 
+  [Toolchain]
+  - Remove bad MANIFEST.SKIP rule.
+
 v0.2.0    2018-11-18 21:04:29+00:00 Europe/London
   [Enhancements]
   - Add strict and coerce options to enforce/coerce on set_column.
