@@ -4,7 +4,7 @@ DBIx::Class::Helper::Row::Types - Use Types to define rows
 
 # VERSION
 
-version v0.2.0
+version v0.3.0
 
 # SYNOPSIS
 
