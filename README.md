@@ -103,7 +103,7 @@ Robert Rothenberg <rrwo@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2017-2018 by Robert Rothenberg.
+This software is Copyright (c) 2017-2022 by Robert Rothenberg.
 
 This is free software, licensed under:
 
