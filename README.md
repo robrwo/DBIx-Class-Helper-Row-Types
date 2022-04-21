@@ -69,11 +69,6 @@ Enabling `strict` for an inflated column is strongly discouraged.
 Strict type constraints are only applied when explicitly setting a
 column value.
 
-# ROADMAP
-
-Support for Perl versions earlier than 5.10 will be removed sometime
-in 2019.
-
 # SEE ALSO
 
 [DBIx::Class](https://metacpan.org/pod/DBIx::Class)

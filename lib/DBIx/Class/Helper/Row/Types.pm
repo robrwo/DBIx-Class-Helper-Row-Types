@@ -1,6 +1,6 @@
 package DBIx::Class::Helper::Row::Types;
 
-use v5.8;
+use v5.10;
 
 # ABSTRACT: Use Types to define rows
 
@@ -15,15 +15,6 @@ use Types::SQL::Util v0.3.0 ();
 # RECOMMEND PREREQ: Type::Tiny::XS
 
 our $VERSION = 'v0.3.0';
-
-=for Pod::Coverage VERSION
-
-=cut
-
-sub VERSION { # for older Perls
-    require version;
-    return version->parse($VERSION);
-}
 
 =head1 SYNOPSIS
 
@@ -142,11 +133,6 @@ sub set_column {
 
 Strict type constraints are only applied when explicitly setting a
 column value.
-
-=head1 ROADMAP
-
-Support for Perl versions earlier than 5.10 will be removed sometime
-in 2019.
 
 =head1 SEE ALSO
 
