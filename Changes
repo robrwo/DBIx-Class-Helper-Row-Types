@@ -1,13 +1,13 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Incompatabilies]
+  - Remove support for Perls older than v5.10.
+
   [Documentation]
   - Bump copyright year.
 
   - Fix encoding of links in README.
-
-  [Incompatabilies]
-  - Remove support for Perls older than v5.10.
 
   [Toolchain]
   - Remove bad MANIFEST.SKIP rule.
