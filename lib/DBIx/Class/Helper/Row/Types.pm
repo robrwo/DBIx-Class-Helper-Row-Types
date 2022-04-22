@@ -21,10 +21,11 @@ our $VERSION = 'v0.3.1';
 In result class:
 
   use Types::SQL -types;
+  use Types::Standard -types;
 
  __PACKAGE__->load_components('Helper::Row::Types');
 
- __PACKAGE__->add_column(
+ __PACKAGE__->add_columns(
 
     id   => Serial,
 

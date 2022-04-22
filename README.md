@@ -12,10 +12,11 @@ In result class:
 
 ```perl
  use Types::SQL -types;
+ use Types::Standard -types;
 
 __PACKAGE__->load_components('Helper::Row::Types');
 
-__PACKAGE__->add_column(
+__PACKAGE__->add_columns(
 
    id   => Serial,
 
