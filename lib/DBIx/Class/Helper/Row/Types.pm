@@ -1,10 +1,8 @@
 package DBIx::Class::Helper::Row::Types;
 
-use v5.10;
-
 # ABSTRACT: Use Types to define rows
 
-use strict;
+use v5.14;
 use warnings;
 
 use Ref::Util ();

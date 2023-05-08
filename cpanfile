@@ -5,7 +5,7 @@ requires "DBIx::Class::Core" => "0";
 requires "Ref::Util" => "0";
 requires "Safe::Isa" => "1.000008";
 requires "Types::SQL::Util" => "v0.3.0";
-requires "perl" => "v5.10.0";
+requires "perl" => "v5.14.0";
 recommends "Ref::Util::XS" => "0";
 recommends "Type::Tiny::XS" => "0";
 
