@@ -6,6 +6,7 @@ requires "Ref::Util" => "0";
 requires "Safe::Isa" => "1.000008";
 requires "Types::SQL::Util" => "v0.3.0";
 requires "perl" => "v5.14.0";
+requires "warnings" => "0";
 recommends "Ref::Util::XS" => "0";
 recommends "Type::Tiny::XS" => "0";
 
@@ -19,8 +20,10 @@ on 'test' => sub {
   requires "Test::More" => "0";
   requires "Test::Most" => "0";
   requires "Types::Common::String" => "0";
-  requires "Types::SQL" => "v0.3.0";
   requires "Types::Standard" => "0";
+  requires "base" => "0";
+  requires "lib" => "0";
+  requires "strict" => "0";
 };
 
 on 'test' => sub {
