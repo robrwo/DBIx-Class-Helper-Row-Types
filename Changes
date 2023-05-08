@@ -16,6 +16,9 @@ Revision history for {{ $dist->name }}:
 
   - Explicitly declare core prerequisites in metadata.
 
+  [Tests]
+  - Removed self-dependency.
+
 v0.3.1    2022-04-22 23:47:45+01:00 Europe/London
   [Documentation]
   - Fix typo in SYNOPSIS.
