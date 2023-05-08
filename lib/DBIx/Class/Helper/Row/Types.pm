@@ -12,7 +12,7 @@ use Types::SQL::Util v0.3.0 ();
 # RECOMMEND PREREQ: Ref::Util::XS
 # RECOMMEND PREREQ: Type::Tiny::XS
 
-our $VERSION = 'v0.4.0';
+our $VERSION = 'v0.4.1';
 
 =head1 SYNOPSIS
 
