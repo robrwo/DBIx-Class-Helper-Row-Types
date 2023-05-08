@@ -65,6 +65,16 @@ This is entirely separate from database-level constraints.
 
 Enabling `strict` for an inflated column is strongly discouraged.
 
+# SUPPORT FOR OLDER PERL VERSIONS
+
+Since v0.4.0, the this module requires Perl v5.14 or later.
+
+Future releases may only support Perl versions released in the last ten years.
+
+If you need this module on Perl v5.10, please use one of the v0.3.x
+versions of this module.  Significant bug or security fixes may be
+backported to those versions.
+
 # KNOWN ISSUES
 
 Strict type constraints are only applied when explicitly setting a

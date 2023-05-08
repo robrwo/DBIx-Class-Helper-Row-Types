@@ -5,6 +5,8 @@ Revision history for {{ $dist->name }}:
   - Increased minimum Perl version to v5.14.
 
   [Documentation]
+  - Document support policy for older Perls.
+
   - Bumped copyright year.
 
   [Other]
