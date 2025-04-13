@@ -43,7 +43,7 @@ main purpose of this is to allow you to use types as a shorthand for
 specifying the column type.
 
 You can use types from L<Types::SQL> or supported types from
-L<Types::Standard>.
+L<Types::Standard>.  See L<Types::SQL::Util> for more details.
 
 =cut
 

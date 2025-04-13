@@ -37,7 +37,7 @@ main purpose of this is to allow you to use types as a shorthand for
 specifying the column type.
 
 You can use types from [Types::SQL](https://metacpan.org/pod/Types%3A%3ASQL) or supported types from
-[Types::Standard](https://metacpan.org/pod/Types%3A%3AStandard).
+[Types::Standard](https://metacpan.org/pod/Types%3A%3AStandard).  See [Types::SQL::Util](https://metacpan.org/pod/Types%3A%3ASQL%3A%3AUtil) for more details.
 
 # METHODS
 
